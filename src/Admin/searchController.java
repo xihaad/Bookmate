@@ -12,15 +12,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class searchController {
+    public Admin.SqliteQueries sqlitequeries=new Admin.SqliteQueries();
     @FXML
     private Button homebtn;
-
-
-
-
-
-
-
+    
 
     public void goTohome(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));

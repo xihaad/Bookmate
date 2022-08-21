@@ -23,7 +23,7 @@ import java.sql.*;
     {
         PreparedStatement preparedStatement=null;
         ResultSet resultSet=null;
-        String query="SELECT * FROM contacts WHERE username = ? and password = ?";
+        String query="SELECT * FROM admin WHERE username = ? and password = ?";
         try
         {
             preparedStatement = connection.prepareStatement(query);
@@ -50,7 +50,7 @@ import java.sql.*;
     public boolean SignupNow(String name, String username, String password)
     {
         PreparedStatement preparedStatement=null;
-        String insert="INSERT INTO contacts(name,username,password) VALUES(?,?,?)";
+        String insert="INSERT INTO admin(name,username,password) VALUES(?,?,?)";
         try {
             preparedStatement=connection.prepareStatement(insert);
             preparedStatement.setString(1,name);
@@ -67,5 +67,33 @@ import java.sql.*;
 
         return false;
     }
+
+     public ResultSet SearchData(String name) throws SQLException
+     {
+         PreparedStatement preparedStatement=null;
+         ResultSet resultSet=null;
+         String query="SELECT * FROM book WHERE name = ?";
+         try
+         {
+             preparedStatement = connection.prepareStatement(query);
+             preparedStatement.setString(1,name);
+             resultSet = preparedStatement.executeQuery();
+             if(resultSet.next())
+             {
+                 return resultSet;
+             }
+             else {
+                 return null;
+             }
+
+         }catch (Exception e)
+         {
+             return null;
+         }
+         finally {
+             preparedStatement.close();
+             resultSet.close();
+         }
+     }
 
 }
