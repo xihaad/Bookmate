@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ControllerSignUp{
-    public Admin.LoginModel loginModel=new Admin.LoginModel();
+    public Admin.SqliteQueries sqlitequeries = new Admin.SqliteQueries();
 
 
     @FXML
@@ -51,12 +51,12 @@ public class ControllerSignUp{
 
 
         if (txtpassword1.getText().equals(txtretypepassword1.getText())) {
-            if (loginModel.SignupNow(txtname.getText(), txtusername1.getText(), txtpassword1.getText())) {
+            if (sqlitequeries.SignupNow(txtname.getText(), txtusername1.getText(), txtpassword1.getText())) {
 
                 // mylabel1.setText("Valid Username and Password");
                 Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setTitle("QUICKCHAT");
+                stage.setTitle("Bookmate");
                 stage.setScene(new Scene(root, 640, 430));
                 stage.show();
 

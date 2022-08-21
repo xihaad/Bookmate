@@ -19,7 +19,7 @@
         <PasswordField fx:id="txtpassword" layoutX="297.0" layoutY="165.0" onKeyReleased="#loghandlekey" prefHeight="26.0" prefWidth="195.0" promptText="Password" />
         <Button fx:id="loginbtn" disable="true" layoutX="360.0" layoutY="224.0" mnemonicParsing="false" onAction="#LoginCheck" style="-fx-background-color: #E7615D;" text="Log In" textFill="WHITE" />
         <Button layoutX="544.0" layoutY="22.0" mnemonicParsing="false" onAction="#goToSignup" style="-fx-background-color: #E7615D;" text="Sign Up" textFill="#fcf7f7" />
-        <Label fx:id="mylabel1" layoutX="101.0" layoutY="307.0" prefHeight="26.0" prefWidth="257.0" textFill="#e80b0b" />
+        <Label fx:id="mylabel1" layoutX="275.0" layoutY="294.0" prefHeight="26.0" prefWidth="257.0" textFill="#e80b0b" />
       <VBox layoutY="-2.0" prefHeight="436.0" prefWidth="220.0" style="-fx-background-color: E7615D;" />
 
 

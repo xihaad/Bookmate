@@ -20,7 +20,7 @@
         <PasswordField fx:id="txtretypepassword1" layoutX="301.0" layoutY="263.0" onKeyReleased="#signuphandlekey" prefHeight="26.0" prefWidth="211.0" promptText="Retype Password" />
         <Button fx:id="signupbtn" disable="true" layoutX="370.0" layoutY="318.0" mnemonicParsing="false" onAction="#SignupCheck" style="-fx-background-color: #E7615D;" text="Sign Up" textFill="WHITE" />
         <Button layoutX="564.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToLogin" style="-fx-background-color: #E7615D;" text="Back" textFill="WHITE" />
-        <Label fx:id="mylabel2" layoutX="130.0" layoutY="362.0" prefHeight="26.0" prefWidth="171.0" textFill="#cd0000" />
+        <Label fx:id="mylabel2" layoutX="319.0" layoutY="362.0" prefHeight="26.0" prefWidth="171.0" textFill="#cd0000" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="319.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="362.0" />
       <VBox prefHeight="430.0" prefWidth="220.0" style="-fx-background-color: #E7615D;" />
 
     </children>

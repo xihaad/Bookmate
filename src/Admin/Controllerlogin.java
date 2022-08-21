@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 
 public class Controllerlogin implements Initializable {
 
-    public Admin.LoginModel loginModel=new Admin.LoginModel();
+    public Admin.SqliteQueries sqlitequeries=new Admin.SqliteQueries();
 
     @FXML
     private Label mylabel1;
@@ -51,13 +51,13 @@ public class Controllerlogin implements Initializable {
         // String text2=txtpassword.getText();
         //  if((text1.isEmpty() || text1.trim().isEmpty() || text2.isEmpty() || text2.trim().isEmpty())){
         try{
-            if(loginModel.LoginNow(txtusername.getText(),txtpassword.getText()))
+            if(sqlitequeries.LoginNow(txtusername.getText(),txtpassword.getText()))
             {
 
-                Parent root = FXMLLoader.load(getClass().getResource("chatclient.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
                 Stage stage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setTitle("Bookmate");
-                stage.setScene(new Scene(root,450,400));
+                stage.setScene(new Scene(root,640,430));
                 stage.show();
             }
             else {
@@ -88,7 +88,7 @@ public class Controllerlogin implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if(loginModel.isDbConnected())
+        if(sqlitequeries.isDbConnected())
         {
 
             //    mylabel1.setText("Connected to database");

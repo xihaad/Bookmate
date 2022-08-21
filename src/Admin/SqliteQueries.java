@@ -2,9 +2,9 @@ package Admin;
 
 import java.sql.*;
 
- public class LoginModel {
+ public class SqliteQueries {
     Connection connection;
-    public LoginModel()
+    public SqliteQueries()
     {
         connection = Admin.SQliteConnection.connector();
         if(connection==null) System.exit(1);
