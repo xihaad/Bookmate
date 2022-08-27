@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Bookmate">
+    <output-path>$PROJECT_DIR$/out/artifacts/Bookmate</output-path>
+    <root id="root">
+      <element id="archive" name="Bookmate.jar">
+        <element id="module-output" name="Bookmate" />
+      </element>
+    </root>
+  </artifact>
+</component>
