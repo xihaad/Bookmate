@@ -68,23 +68,34 @@ import java.sql.*;
         return false;
     }
 
-     public ResultSet SearchData(String name) throws SQLException
+     public ResultSet SearchData() throws SQLException
      {
          PreparedStatement preparedStatement=null;
          ResultSet resultSet=null;
-         String query="SELECT * FROM book WHERE name = ?";
+         String query="SELECT * FROM book";
          try
          {
              preparedStatement = connection.prepareStatement(query);
-             preparedStatement.setString(1,name);
+//             preparedStatement.setString(1,name);
              resultSet = preparedStatement.executeQuery();
-             if(resultSet.next())
-             {
-                 return resultSet;
-             }
-             else {
-                 return null;
-             }
+//             if(resultSet.next())
+//             {
+//                 return resultSet;
+//             }
+//             else {
+//                 return null;
+//             }
+             System.out.println("query executed resultset");
+
+             System.out.println(resultSet);
+             String st = resultSet.getString("name");
+             System.out.println(st);
+//             while (resultSet.next()) {
+//                 String s = resultSet.getString("name");
+//                 String n = resultSet.getString("description");
+//                 System.out.println(s + "   " + n);
+//             }
+             return resultSet;
 
          }catch (Exception e)
          {
@@ -96,4 +107,29 @@ import java.sql.*;
          }
      }
 
-}
+
+     public boolean AddBook(String bookname, String author, String genre, String description)
+     {
+         PreparedStatement preparedStatement=null;
+         String insert="INSERT INTO book(name,author,genre, description) VALUES(?,?,?,?)";
+         try {
+             preparedStatement=connection.prepareStatement(insert);
+             preparedStatement.setString(1,bookname);
+             preparedStatement.setString(2,author);
+             preparedStatement.setString(3,genre);
+             preparedStatement.setString(4,description);
+//             preparedStatement.setString(5,pdflink);
+             preparedStatement.execute();
+             return true;
+
+         }catch (Exception e)
+         {
+
+             System.out.println();
+         }
+
+         return false;
+     }
+
+
+ }
